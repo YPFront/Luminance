@@ -107,6 +107,13 @@
     blue = document.getElementById('blue');
 
     rangeInput.addEventListener("mousemove", function() {
+        console.log(parseInt(rangeInput.value));
+        blue.style.filter = "brightness(" + (61.5 + parseInt(rangeInput.value) * 0.385) + "%)";
+        red.style.filter = "brightness(" + (100 - parseInt(rangeInput.value) * 0.235) + "%)";
+    });
+
+    rangeInput.addEventListener("touchmove", function() {
+        console.log(parseInt(rangeInput.value));
         blue.style.filter = "brightness(" + (61.5 + parseInt(rangeInput.value) * 0.385) + "%)";
         red.style.filter = "brightness(" + (100 - parseInt(rangeInput.value) * 0.235) + "%)";
     });
