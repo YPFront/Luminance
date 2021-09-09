@@ -71,6 +71,17 @@
         #g-range-box label {
             margin-right: 20px;
         }
+        
+        #g-range-box>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #g-range-box img {
+            width: 20px;
+            margin: 3px;
+        }
     </style>
 </head>
 
@@ -79,8 +90,12 @@
     <img src="red.png" id="red">
     <div id="g-range-box">
         <label>color:</label>
-        <div id="g-range-container" class="bg-gray">
-            <input class="g-range" type="range" id="g-range" min="0" max="100" value="50">
+        <div>
+            <img src="left.png">
+            <div id="g-range-container" class="bg-gray">
+                <input class="g-range" type="range" id="g-range" min="0" max="100" value="50">
+            </div>
+            <img src="right.png">
         </div>
     </div>
 </body>
