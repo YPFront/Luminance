@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Michelangelo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #g-range-container {
+            width: 370px;
+            border-radius: 10px;
+            height: 10px;
+            padding-top: 6px;
+            border: 1px solid #CECECE;
+        }
+        
+        #g-range-container .g-range {
+            width: 350px;
+            background-color: #b5b5b5;
+            margin: 0 auto;
+            display: block;
+            border-radius: 10px;
+        }
+        
+        #g-range-values-container {
+            width: 350px;
+            margin: 20px auto;
+        }
+        
+        input[type="range"] {
+            -webkit-appearance: none;
+            background-color: black;
+            height: 4px;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            position: relative;
+            top: 0px;
+            z-index: 1;
+            width: 35px;
+            height: 35px;
+            border-radius: 40px;
+            background-color: #FFF;
+            border: 1px solid #CECECE;
+        }
+        
+        #g-range-box {
+            display: flex;
+            width: 588px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        #g-range-box label {
+            margin-right: 20px;
+        }
+        
+        #g-range-box>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #g-range-box img {
+            width: 20px;
+            margin: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="Doni-Tondo.jpg" id="poppies">
+    <div id="g-range-box">
+        <label>color:</label>
+        <div>
+            <div id="g-range-container" class="bg-gray">
+                <input class="g-range" type="range" id="g-range" min="0" max="100" value="100">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    rangeInput = document.getElementById('g-range');
+
+    poppies = document.getElementById('poppies');
+
+    rangeInput.addEventListener("mousemove", function() {
+        poppies.style.filter = "grayscale(" + (100 - parseInt(rangeInput.value)) + "%)";
+    });
+
+    rangeInput.addEventListener("touchmove", function() {
+        poppies.style.filter = "grayscale(" + (100 - parseInt(rangeInput.value)) + "%)";
+    });
+</script>
+
+</html>
